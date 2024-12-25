@@ -11,7 +11,7 @@ exports.typeOrmModuleOptions = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     entities: [__dirname + "/../**/entities/*.entity.{js,ts}"],
-    synchronize: false,
+    synchronize: true,
     autoLoadEntities: true,
     migrationsRun: true,
     logging: false,
