@@ -1,8 +1,10 @@
-import { IsString, MaxLength, IsNotEmpty } from "class-validator";
+import { IsString, MaxLength, IsNotEmpty, Matches } from "class-validator";
+import { errorsValidationRole } from "./constants";
 
 export class CreateRoleDto {
-	@IsNotEmpty({ message: "Поле role не должно быть пустым" })
-	@IsString({ message: "Поле role должно быть строкой" })
-	@MaxLength(70, { message: "Поле role не должно содержать больше 70 символов" })
+	@IsNotEmpty({ message: errorsValidationRole.emptyField })
+	@IsString({ message: errorsValidationRole.mustBeString })
+	@Matches(/\S/, { message: errorsValidationRole.onlySpaces })
+	@MaxLength(70, { message: errorsValidationRole.longField })
 	name: string;
 }
