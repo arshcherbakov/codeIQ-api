@@ -6,7 +6,6 @@ import { RoleRepository } from "src/role/role.repository";
 import { Role } from "src/entities/role.entity";
 import { mockRole, mockRoles, nonExistentRole, mockRoleRepository } from "src/role/constants";
 
-// eslint-disable-next-line max-lines-per-function
 describe("RoleController", () => {
 	let roleController: RoleController;
 	let roleService: RoleService;
@@ -27,7 +26,7 @@ describe("RoleController", () => {
 		roleController = roleModule.get<RoleController>(RoleController);
 		roleService = roleModule.get<RoleService>(RoleService);
 	});
-	// eslint-disable-next-line max-lines-per-function
+
 	describe("CRUD roles", () => {
 		it("should return all roles", async () => {
 			jest.spyOn(roleService, "getAllRoles").mockResolvedValue(mockRoles);

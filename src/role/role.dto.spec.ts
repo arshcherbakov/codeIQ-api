@@ -2,7 +2,7 @@ import { plainToInstance } from "class-transformer";
 import { validate } from "class-validator";
 import { CreateRoleDto } from "./role.dto";
 import { errorsValidationRole, invalidRoleNames } from "./constants";
-// eslint-disable-next-line max-lines-per-function
+
 describe("CreateRoleDto Validation", () => {
 	const testValidateNameRole = async (
 		nameRole: Record<string, string | number>,
