@@ -4,13 +4,20 @@ import { RoleController } from "src/role/role.controller";
 import { RoleService } from "src/role/role.service";
 import { RoleRepository } from "src/role/role.repository";
 import { Role } from "src/entities/role.entity";
-import { mockRole, mockRoles, nonExistentRole, mockRoleRepository } from "src/role/constants";
+import { mockRole, mockRoles, nonExistentRole } from "src/role/constants";
 
 describe("RoleController", () => {
 	let roleController: RoleController;
 	let roleService: RoleService;
 
 	beforeEach(async () => {
+		const mockRoleRepository = {
+			findOne: jest.fn(),
+			find: jest.fn(),
+			save: jest.fn(),
+			remove: jest.fn(),
+		};
+
 		const roleModule: TestingModule = await Test.createTestingModule({
 			controllers: [RoleController],
 			providers: [

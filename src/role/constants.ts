@@ -18,13 +18,6 @@ export const nonExistentRole: Role = {
 	name: "FakeAdmin",
 };
 
-export const mockRoleRepository = {
-	findOne: jest.fn(),
-	find: jest.fn(),
-	save: jest.fn(),
-	remove: jest.fn(),
-};
-
 export const invalidRoleNames = {
 	voidName: "",
 	nameWithSpaces: "            ",
