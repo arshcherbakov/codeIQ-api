@@ -5,7 +5,7 @@ import { Role } from "src/entities/role.entity";
 import { CreateRoleDto } from "./role.dto";
 
 @Injectable()
-export class RoleRepostitory {
+export class RoleRepository {
 	constructor(@InjectRepository(Role) private roleRepository: Repository<Role>) {}
 
 	async checkRoleByName(roleName: CreateRoleDto): Promise<Role> {

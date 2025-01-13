@@ -36,19 +36,19 @@ export class UserRepository {
 		}
 	}
 
-	async deleteUser(userData: User): Promise<User> {
-		try {
-			return await this.userRepository.remove(userDate);
-		} catch (error) {
-			throw new InternalServerErrorException({ message: "Не удалось создать пользователя", error: error });
-		}
-	}
+	// async deleteUser(userData: User): Promise<User> {
+	// 	try {
+	// 		return await this.userRepository.remove(userDate);
+	// 	} catch (error) {
+	// 		throw new InternalServerErrorException({ message: "Не удалось создать пользователя", error: error });
+	// 	}
+	// }
 
-	async updateUser(createUserDto: CreateUserDto): Promise<User> {
-		try {
-			return await this.userRepository.remove(createUserDto);
-		} catch (error) {
-			throw new InternalServerErrorException({ message: "Не удалось создать пользователя", error: error });
-		}
-	}
+	// async updateUser(createUserDto: CreateUserDto): Promise<User> {
+	// 	try {
+	// 		return await this.userRepository.remove(createUserDto);
+	// 	} catch (error) {
+	// 		throw new InternalServerErrorException({ message: "Не удалось создать пользователя", error: error });
+	// 	}
+	// }
 }
